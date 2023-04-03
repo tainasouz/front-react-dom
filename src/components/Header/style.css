@@ -1,0 +1,137 @@
+#header {
+
+    color: #FFFFFF;
+
+
+}
+
+#filme-destaque {
+    max-width: 40em;
+    /* margin: 4em 0em; */
+}
+
+.titulo-destaque {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #eaeaea;
+}
+
+.avaliacao-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.avaliacao-card-header-principal{
+    color: #FFFFFF;
+}
+
+@media screen and (min-width: 320px) and (max-width: 550px) {
+
+    #header {
+
+        padding: 0em 2em;
+        color: #FFFFFF;
+        gap: 1em;
+
+    }
+
+    #filme-destaque {
+        padding: 2em 0em;
+        gap: 1em;
+    }
+
+    .titulo-destaque {
+        font-size: 24px;
+        font-weight: 700;
+        color: #eaeaea;
+        margin-bottom: 12px;
+    }
+
+    .descricao {
+        font-weight: 400;
+        font-size: 14px;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+    }
+
+    .num-card {
+        color: #8C8C8C;
+        font-size: 0.75rem;
+    
+    }
+
+    
+
+
+}
+
+@media screen and (min-width: 550px) and (max-width: 768px) {
+
+    #header {
+
+        padding: 0em 2em;
+        color: #FFFFFF;
+        gap: 1em;
+
+    }
+
+    #filme-destaque {
+
+        padding: 2em 0em;
+        gap: 1em;
+    }
+
+    .titulo-destaque {
+        font-size: 24px;
+        font-weight: 700;
+        color: #eaeaea;
+        margin-bottom: 12px;
+    }
+
+    .descricao {
+        font-weight: 400;
+        font-size: 14px;
+
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1125px) {
+    #header {
+
+        padding: 0em 4em;
+        gap: 1em;
+
+    }
+
+    #filme-destaque {
+        padding: 5em 0em;
+    }
+
+}
+
+@media screen and (min-width: 1125px) {
+
+    #filme-destaque {
+        padding: 5em 0em;
+    }
+
+    #header {
+
+        padding: 0em 5em;
+        gap: 1em;
+
+    }
+}

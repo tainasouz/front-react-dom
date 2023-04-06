@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './style.css'
+import api from '../../services/api';
 import { Detalhes } from '../../type';
 import CardAtores, { SkeletonCardAtores } from '../CardAtores';
 
@@ -13,14 +14,18 @@ function BodyDetalhes({ id, type }: Params) {
 
   const [state, setState] = useState<Detalhes | null>(null)
   useEffect(() => {
-    fetch(`http://localhost:3000/detalhes/${type}/${id}`)
-      .then(res => res.json())
-      .then((destalhes: Detalhes) => {
-        setState(destalhes);
+    api
+      .get("detalhes/${type}/${id}")
+      .then((response) => response.data)
+      .then((detalhes: Detalhes) => {
+        setState(detalhes)
       })
+      .catch((err: Error) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
   }, [])
 
-  console.log(state)
+
 
   return (
     <div className="body">

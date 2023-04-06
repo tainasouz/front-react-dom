@@ -3,6 +3,7 @@ import { ResultadoPesquisa } from '../../type';
 import Card from '../Card';
 import Loader from '../Loader';
 import './style.css'
+import api from '../../services/api';
 
 interface PesquisaType {
     query: string;
@@ -14,8 +15,9 @@ function BodyPesquisa({ query }: PesquisaType) {
 
     const [state, setState] = useState<Array<ResultadoPesquisa> | null>(null)
     useEffect(() => {
-        fetch(`http://localhost:3000/pesquisa/${query}/1`)
-            .then(res => res.json())
+        api
+        .get(`pesquisa/${query}/1`)
+            .then(res => res.data)
             .then((resultado: ResultadoPesquisa[]) => {
                 setState(resultado);
             })

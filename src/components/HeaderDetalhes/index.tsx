@@ -3,6 +3,7 @@ import { Detalhes } from '../../type';
 import './style.css';
 import Navbar from '../NavBar';
 import NavDetalhes from '../Detalhes';
+import api from '../../services/api';
 
 export type Params = {
     id: number,
@@ -14,8 +15,9 @@ function HeaderDetalhes({ id, type }: Params) {
 
     const [state, setState] = useState<Detalhes | null>(null)
     useEffect(() => {
-        fetch(`http://localhost:3000/detalhes/${type}/${id}`)
-            .then(res => res.json())
+        api
+        .get(`detalhes/${type}/${id}`)
+            .then(res => res.data)
             .then((destalhes: Detalhes) => {
                 setState(destalhes);
             })
@@ -64,41 +66,6 @@ function HeaderDetalhes({ id, type }: Params) {
             }
         </div>
 
-
-        /* </div><div className="detalhes">
-                    <div className="cartaz">
-                        <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt={title} />
-                    </div>
-                    <div className="infos">
-                        <div className="titulo-min-infos">
-                            <div className="titulo">
-                                {title}
-                            </div>
-                            <div className="data-genero">
-                                <div className="data-lancamento">{new Date(release_date).toLocaleDateString()}</div>
-                                <div className="genero">{genres.join(', ')}</div>
-                                {Notification.rating == "" ?
-                                    <></>
-                                    :
-                                    <div className="classificao-indicativa">
-                                        {certification.iso_3166_1 == "BR" ?
-                                            `${certification.rating}`
-                                            :
-                                            `${certification.rating} (${certification.iso_3166_1})`}
-                                    </div>}
-
-                            </div>
-                        </div>
-                        <div className="sinopse-classificacao">
-                            <div className="sinopse">
-                                {overview}
-                            </div>
-                            <div className="classificacao">
-                                {vote_average.toFixed(1)}
-                            </div>
-                        </div>
-                    </div>
-                </div> */
     );
 }
 

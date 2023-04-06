@@ -5,13 +5,15 @@ import { IconContext } from "react-icons";
 import { FaStar } from 'react-icons/fa'
 import { IoSearch, IoStar } from 'react-icons/io5'
 import Navbar from '../NavBar';
+import api from '../../services/api';
 
 
 function Header() {
     const [state, setState] = useState<FilmesPopulares | null>(null)
     useEffect(() => {
-        fetch("http://localhost:3000/carregaDestaque")
-            .then(res => res.json())
+        api
+        .get("carregaDestaque")
+            .then(res => res.data)
             .then((destaque: FilmesPopulares) => {
                 setState(destaque);
             })

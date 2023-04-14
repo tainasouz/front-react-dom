@@ -3,6 +3,7 @@ import { IconContext } from "react-icons";
 import { IoStar } from 'react-icons/io5'
 import Poster from '../../assets/img/poster.png'
 import './style.css';
+import { Link } from 'react-router-dom';
 
 export type CardType = {
     id: number;
@@ -20,7 +21,7 @@ function Card({ id, poster_path, title, vote_average, genres, type }: CardType) 
 
         <div className="card">
             <div className="img-card">
-                <a href={`detalhes/${id}/${type}`} className="link-img">
+                <a href={`/detalhes/${id}/${type}`} className="link-img">
                     {
                         poster_path !== null
                         ? <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt={title} />
@@ -28,10 +29,10 @@ function Card({ id, poster_path, title, vote_average, genres, type }: CardType) 
                         <img src={Poster} alt={title} />
                     }
                     
-                </a>
+                </a >
             </div>
             <div className="info-card">
-                <a href="/detalhes" className="titulo-card">{title}</a>
+                <Link to={`/detalhes/${id}/${type}`} className="titulo-card">{title}</Link>
                 <div className="genero-card" id={`card-${id}`}>{genres}</div>
                 <div className="avaliacao-card">
                     <IconContext.Provider value={{ style: { color: '#ffd900', fontSize: '16px' } }}>

@@ -15,7 +15,7 @@ function BodyDetalhes({ id, type }: Params) {
   const [state, setState] = useState<Detalhes | null>(null)
   useEffect(() => {
     api
-      .get("detalhes/${type}/${id}")
+      .get(`detalhes/${type}/${id}`)
       .then((response) => response.data)
       .then((detalhes: Detalhes) => {
         setState(detalhes)
@@ -35,9 +35,8 @@ function BodyDetalhes({ id, type }: Params) {
           {
             state === null
               ? <SkeletonCardAtores qtd={5}/>
-              // ?  Array.from({length: 10}).map(() => <SkeletonTeste />)
 
-              : state?.cast.map((ator) => {
+              : state.cast.map((ator) => {
                 return (
                   <CardAtores key={ator.id} character={ator.character} id={ator.id} name={ator.name} profile_path={ator.profile_path}/>
                 )

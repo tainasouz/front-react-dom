@@ -21,7 +21,7 @@ function Card({ id, poster_path, title, vote_average, genres, type }: CardType) 
 
         <div className="card">
             <div className="img-card">
-                <a href={`/detalhes/${id}/${type}`} className="link-img">
+                <Link to={`/detalhes/${id}/${type}`} className="link-img">
                     {
                         poster_path !== null
                         ? <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt={title} />
@@ -29,7 +29,7 @@ function Card({ id, poster_path, title, vote_average, genres, type }: CardType) 
                         <img src={Poster} alt={title} />
                     }
                     
-                </a >
+                </Link >
             </div>
             <div className="info-card">
                 <Link to={`/detalhes/${id}/${type}`} className="titulo-card">{title}</Link>

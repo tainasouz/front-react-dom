@@ -6,6 +6,7 @@ import { FaStar } from 'react-icons/fa'
 import { IoSearch, IoStar } from 'react-icons/io5'
 import Navbar from '../NavBar';
 import api from '../../services/api';
+import { Link } from 'react-router-dom';
 
 
 function Header() {
@@ -50,8 +51,8 @@ function Header() {
                             </div>
                         </>
                         : <>
-                            <a href={`/detalhes/${state.id}/movie`}
-                            className="titulo-destaque">{state.title}</a>
+                            <Link to={`/detalhes/${state.id}/movie`}
+                            className="titulo-destaque">{state.title}</Link>
                             <p className="descricao "> {state.overview}</p>
                             <div className="avaliacao-card avaliacao-card-header-principal">
                                 <IconContext.Provider value={{ style: { color: 'ffd900', fontSize: '20px' } }}>

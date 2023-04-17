@@ -14,7 +14,7 @@ function Navbar() {
         <div id="navbar">
             <div className="div-logo-menu">
                 <Link to="/" className="logo">
-                    <img src={Logo} alt="" srcSet="" />
+                    <img src={Logo} alt='Link logo home'/>
                 </Link>
 
             </div>

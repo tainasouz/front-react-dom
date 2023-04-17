@@ -20,13 +20,13 @@ function Card({ id, poster_path, title, vote_average, genres, type }: CardType) 
     return (
 
         <div className="card">
-            <div className="img-card">
+            <div className="card-img">
                 <Link to={`/detalhes/${id}/${type}`} className="link-img">
                     {
                         poster_path !== null
-                        ? <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt={title} />
+                        ? <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} className='img-card' alt={title} />
                         :
-                        <img src={Poster} alt={title} />
+                        <img src={Poster} className='img-card' alt={title} />
                     }
                     
                 </Link >
@@ -58,7 +58,7 @@ export function SkeletonCard({ qtd }: SkeletonCard) {
             {
                 Array.from({ length: qtd }).map((_, index) => 
                     <div className="card" key={`skeleton-${index}`}>
-                        <div className="img-card">
+                        <div className="card-img">
                             <img className="skeleton" id="logo-img" alt="" />
                         </div>
                         <div className="info-card">

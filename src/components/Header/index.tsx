@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './style.css';
 import { FilmesPopulares } from '../../type';
 import { IconContext } from "react-icons";
-import { FaStar } from 'react-icons/fa'
 import { IoSearch, IoStar } from 'react-icons/io5'
 import Navbar from '../NavBar';
 import api from '../../services/api';

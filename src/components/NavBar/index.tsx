@@ -4,10 +4,6 @@ import { IconContext } from "react-icons";
 import { IoSearch } from 'react-icons/io5'
 import { Link } from 'react-router-dom';
 
-interface NavbarProps {
-    color?: string;
-}
-
 function Navbar() {
 
     return (

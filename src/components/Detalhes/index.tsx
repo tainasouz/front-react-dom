@@ -21,7 +21,7 @@ function NavDetalhes({ certification, genres, overview, poster_path, release_dat
 
         <div className="detalhes">
             <div className="cartaz">
-                <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt={title} />
+                <img src={`https://image.tmdb.org/t/p/w400/${poster_path}`} alt={title} />
             </div>
             <div className="infos">
                 <div className="titulo-min-infos">

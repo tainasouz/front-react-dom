@@ -19,7 +19,7 @@ function CardAtores({ character, id, name, profile_path }: CardAtoresType) {
             <div className="cartaz-autor">
                 {
                     profile_path !== null
-                        ? <img src={`https://image.tmdb.org/t/p/w500/${profile_path}`} alt={name} />
+                        ? <img src={`https://image.tmdb.org/t/p/w200/${profile_path}`} alt={name} />
                         :
                         <img src={User} alt={name} />
                 }

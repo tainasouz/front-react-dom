@@ -56,8 +56,8 @@ export function SkeletonCard({ qtd }: SkeletonCard) {
         <>
 
             {
-                Array.from({ length: qtd }).map(() =>
-                    <div className="card">
+                Array.from({ length: qtd }).map((_, index) => 
+                    <div className="card" key={`skeleton-${index}`}>
                         <div className="img-card">
                             <img className="skeleton" id="logo-img" alt="" />
                         </div>
